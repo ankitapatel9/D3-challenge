@@ -126,7 +126,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
   } else if (chosenXAxis === "age") {
     xLabel = "Age (Median)";
   } else {
-    xLabel = "Household Income (Media)";
+    xLabel = "Household Income (Median)";
   }
   var yLabel;
   if (chosenYAxis === "healthCare") {
@@ -206,7 +206,7 @@ d3.csv("assets/data/data.csv").then(function (stateHealthData) {
     .attr("fill", "lightblue")
     .attr("opacity", "1");
 
-  var textsGroup = chartGroup.selectAll("text")
+  var textsGroup = chartGroup.selectAll("circles")
     .data(stateHealthData)
     .enter()
     // We return the abbreviation to .text, which makes the text the abbreviation.
